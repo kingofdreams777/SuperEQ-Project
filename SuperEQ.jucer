@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="ZkITdj" name="SuperEQ" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" cppLanguageStandard="17">
   <MAINGROUP id="F8n88r" name="SuperEQ">
     <GROUP id="{275657DE-409B-E166-D5F4-C2BD1C899ACA}" name="Source">
       <FILE id="mGgp8A" name="PluginProcessor.cpp" compile="1" resource="0"
