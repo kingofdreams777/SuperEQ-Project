@@ -49,8 +49,11 @@ void SuperEQAudioProcessorEditor::resized()
     auto lowCutArea = bounds.removeFromLeft(bounds.getWidth() * 0.33);
     auto highCutArea = bounds.removeFromRight(bounds.getWidth() * 0.5);
 
-    lowCutFreqSlider.setBounds(lowCutArea);
-    highCutFreqSlider.setBounds(highCutArea);
+    lowCutFreqSlider.setBounds(lowCutArea.removeFromTop(lowCutArea.getHeight() * 0.5));
+    lowCutSlopeSlider.setBounds(lowCutArea);
+
+    highCutFreqSlider.setBounds(highCutArea.removeFromTop(highCutArea.getHeight() * 0.5));
+    highCutSlopeSlider.setBounds(highCutArea);
 
     peakFreqSlider.setBounds(bounds.removeFromTop(bounds.getHeight() * 0.33));
     peakGainSlider.setBounds(bounds.removeFromTop(bounds.getHeight() * 0.5));
@@ -65,6 +68,8 @@ std::vector<juce::Component*> SuperEQAudioProcessorEditor::getComps()
         &peakGainSlider,
         &peakQualitySlider,
         &lowCutFreqSlider,
-        &highCutFreqSlider
+        &highCutFreqSlider,
+        &lowCutSlopeSlider,
+        &highCutSlopeSlider
     };
 }
