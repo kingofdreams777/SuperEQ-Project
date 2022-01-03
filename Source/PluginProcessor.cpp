@@ -109,6 +109,9 @@ void SuperEQAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBloc
 
     updateFilters();
 
+    leftChannelFifo.prepare(samplesPerBlock);
+    rightChannelFifo.prepare(samplesPerBlock);
+
 }
 
 void SuperEQAudioProcessor::releaseResources()
@@ -170,6 +173,9 @@ void SuperEQAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce
     
     leftChain.process(leftContext);
     rightChain.process(rightContext);
+
+    leftChannelFifo.update(buffer);
+    rightChannelFifo.update(buffer);
     
 }
 
